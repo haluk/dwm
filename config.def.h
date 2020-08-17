@@ -94,8 +94,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	
+	{ MODKEY,                       XK_s,      spawn,          {.v = dmenucmd } },
 
-	{ MODKEY,				XK_s,	spawn,		SHCMD("maim $HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png") },
+	//{ MODKEY,				XK_s,	spawn,		SHCMD("maim $HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png") },
 	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },
 };
 
