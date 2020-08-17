@@ -58,6 +58,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *maimcmd[]  = { "maim", "$HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -94,6 +95,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+	{ 0,				XK_Print,	spawn,		SHCMD("maim $HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H:%M:%S).png") },
+	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maimpick") },
 };
 
 /* button definitions */
